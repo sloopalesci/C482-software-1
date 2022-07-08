@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProduct">
+   <children>
+      <Label layoutX="97.0" layoutY="37.0" text="Add Product">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="91.0" text="ID" />
+      <Label layoutX="29.0" layoutY="130.0" text="Name" />
+      <Label layoutX="29.0" layoutY="169.0" text="Inv" />
+      <Label layoutX="29.0" layoutY="205.0" text="Price" />
+      <Label layoutX="29.0" layoutY="240.0" text="Min" />
+      <Label layoutX="29.0" layoutY="278.0" text="Max" />
+      <TextField fx:id="productIDField" editable="false" layoutX="79.0" layoutY="87.0" opacity="0.2" promptText="Auto Gen - Disabled" />
+      <TextField fx:id="productNameField" layoutX="79.0" layoutY="126.0" />
+      <TextField fx:id="productInvField" layoutX="79.0" layoutY="165.0" />
+      <TextField fx:id="productPriceField" layoutX="79.0" layoutY="201.0" />
+      <TextField fx:id="productMinField" layoutX="79.0" layoutY="236.0" />
+      <TextField fx:id="productMaxField" layoutX="79.0" layoutY="274.0" />
+      <TableView fx:id="partTable" layoutX="375.0" layoutY="51.0" prefHeight="132.0" prefWidth="300.0">
+        <columns>
+          <TableColumn fx:id="partIDCol" prefWidth="50.0" text="Part ID" />
+          <TableColumn fx:id="partNameCol" prefWidth="115.0" text="Part Name" />
+            <TableColumn fx:id="partInvCol" prefWidth="55.0" text="Inv Level" />
+            <TableColumn fx:id="partPriceCol" text="Price/Cost per Unit" />
+        </columns>
+      </TableView>
+      <TableView fx:id="aPartTable" layoutX="375.0" layoutY="222.0" prefHeight="132.0" prefWidth="300.0">
+         <columns>
+            <TableColumn fx:id="aPartIDCol" prefWidth="50.0" text="Part ID" />
+            <TableColumn fx:id="aPartNameCol" prefWidth="115.0" text="Part Name" />
+            <TableColumn fx:id="aPartInvCol" prefWidth="55.0" text="Inv Level" />
+            <TableColumn fx:id="aPartPriceCol" text="Price/Cost per Unit" />
+         </columns>
+      </TableView>
+      <Button layoutX="628.0" layoutY="188.0" mnemonicParsing="false" onAction="#onAddAssociatedPart" text="Add" />
+      <Button layoutX="375.0" layoutY="361.0" mnemonicParsing="false" onAction="#onRemoveAssociatedPart" text="Remove Associated Part" />
+      <Button layoutX="558.0" layoutY="361.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
+      <Button layoutX="620.0" layoutY="361.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+      <TextField fx:id="queryField" layoutX="514.0" layoutY="14.0" onKeyTyped="#onQuery" promptText="Search by Part ID or Name" />
+      <Label fx:id="errorLabel" layoutX="28.0" layoutY="321.0" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="309.0" layoutY="118.0" rotate="270.0" text="All Parts Available" />
+      <Label layoutX="312.0" layoutY="287.0" rotate="270.0" text="Associated Parts" />
+   </children>
+</AnchorPane>
